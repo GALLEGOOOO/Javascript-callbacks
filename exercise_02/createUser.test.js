@@ -24,12 +24,11 @@ describe("Given function createUser", () => {
       const result = await createUser(inputString, onError, onSuccess);
       // Assert
       expect(result).toEqual(
-      `User with email: ${inputString} has been correctly created` ||
-      "Error: user not created",
-    );
+        `User with email: ${inputString} has been correctly created` ||
+          "Error: user not created",
+      );
     });
   });
 });
 
-describe("Given function createUser", () => {
-});
+describe("Given function createUser", () => {});
