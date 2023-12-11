@@ -17,16 +17,19 @@ describe("Given function createUser", () => {
 
 describe("Given function createUser", () => {
   describe("When function is called with an email as an empty string", () => {
-    test("Then a string is returned for success case", () => {
+    test("Then a string is returned for success case", async () => {
       // Arrange
       const inputString = "email@gmail.com";
       // Act
-      const result = createUser(inputString, onError, onSuccess);
+      const result = await createUser(inputString, onError, onSuccess);
       // Assert
       expect(result).toEqual(
-        `User with email: ${inputString} has been correctly created` ||
-          "Error: user not created",
-      );
+      `User with email: ${inputString} has been correctly created` ||
+      "Error: user not created",
+    );
     });
   });
+});
+
+describe("Given function createUser", () => {
 });
