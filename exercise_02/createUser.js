@@ -1,33 +1,34 @@
-/**
- * Define 'createUser' function and signature (JSDocs)
- *
- * input:
- *  - email: string
- *  - onError: function
- *  - onSuccess: function
- *
- * It will generate a random number in between 0 and 1
- * If random number is less than 0.5 or email is empty, then call onError callback
- * Otherwise, call onSuccess function
- *
- * output
- *  - string
- */
+import createUser from "./createUser.js";
+import onError from "./callbacks/onError.js";
+import onSuccess from "./callbacks/onSuccess.js";
 
-/**
- * Passed an email as a string generates a random number between zero and one,
- * if this number is less than 0.5 or email is empty then returns a function
- * validated string
- * @param {string} email
- * @param {function} onError
- * @param {function} onSuccess
- * @returns {string}
- */
-const createUser = (email, onError, onSuccess) => {
-  const randomNumber = Math.random();
-  if (email !== "" && randomNumber > 0.5) {
-    return onSuccess(email);
-  }
-  return onError();
-};
-export default createUser;
+describe("Given function createUser", () => {
+  describe("When function is called with an email as an empty string", () => {
+    test("Then a string is returned", () => {
+      // Arrange
+      const inputEmptyString = "";
+      // Act
+      const result = createUser(inputEmptyString, onError, onSuccess);
+      // Assert
+      expect(result).toEqual("Error: user not created");
+    });
+  });
+});
+
+describe("Given function createUser", () => {
+  describe("When function is called with an email as an empty string", () => {
+    test("Then a string is returned for success case", () => {
+      // Arrange
+      const inputString = "email@gmail.com";
+
+      // Act
+      const result = createUser(inputString, onError, onSuccess);
+
+      // Assert
+      expect(result).toEqual(
+        `User with email: ${inputString} has been correctly created` ||
+          "Error: user not created",
+      );
+    });
+  });
+});

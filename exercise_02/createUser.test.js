@@ -23,7 +23,7 @@ describe("Given function createUser", () => {
       // Act
       const result = await createUser(inputString, onError, onSuccess);
       // Assert
-      expect(result).toEqual(
+      expect(result).toBe(
         `User with email: ${inputString} has been correctly created` ||
           "Error: user not created",
       );
