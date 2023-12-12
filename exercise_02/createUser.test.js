@@ -13,10 +13,8 @@ describe("Given function createUser", () => {
       expect(result).toEqual("Error: user not created");
     });
   });
-});
 
-describe("Given function createUser", () => {
-  describe("When function is called with an email as an empty string", () => {
+  describe("When function is called with a non-empty email string", () => {
     test("Then a string is returned for success case", () => {
       // Arrange
       const inputString = "email@gmail.com";
@@ -26,8 +24,7 @@ describe("Given function createUser", () => {
 
       // Assert
       expect(result).toEqual(
-        `User with email: ${inputString} has been correctly created` ||
-          "Error: user not created",
+        `User with email: ${inputString} has been correctly created`,
       );
     });
   });
