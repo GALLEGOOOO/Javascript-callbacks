@@ -2,29 +2,29 @@ import createUser from "./createUser.js";
 import onError from "./callbacks/onError.js";
 import onSuccess from "./callbacks/onSuccess.js";
 
-describe("Given function createUser", () => {
-  describe("When function is called with an email as an empty string", () => {
-    test("Then a string is returned", () => {
-      // Arrange
+describe("Dada la función createUser", () => {
+  describe("Cuando la función se llama con un correo electrónico como cadena vacía", () => {
+    test("Entonces se devuelve una cadena", async () => {
+      // Organizar
       const inputEmptyString = "";
-      // Act
-      const result = createUser(inputEmptyString, onError, onSuccess);
-      // Assert
+      // Actuar
+      const result = await createUser(inputEmptyString, onError, onSuccess);
+      // Afirmar
       expect(result).toEqual("Error: user not created");
     });
   });
 
-  describe("When function is called with a non-empty email string", () => {
-    test("Then a string is returned for success case", () => {
-      // Arrange
+  describe("Cuando la función se llama con un correo electrónico no vacío", () => {
+    test("Entonces se devuelve una cadena para el caso de éxito", async () => {
+      // Organizar
       const inputString = "email@gmail.com";
 
-      // Act
-      const result = createUser(inputString, onError, onSuccess);
+      // Actuar
+      const result = await createUser(inputString, onError, onSuccess);
 
-      // Assert
+      // Afirmar
       expect(result).toEqual(
-        `User with email: ${inputString} has been correctly created`,
+        `Usuario con correo electrónico: ${inputString} ha sido creado correctamente`,
       );
     });
   });
