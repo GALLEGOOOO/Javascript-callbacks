@@ -24,7 +24,7 @@
  * @returns {string}
  */
 const createUser = (email, onError, onSuccess) => {
-  const randomNumber = Math.random().toFixed(1);
+  const randomNumber = Math.random();
   if (email !== "" && randomNumber > 0.5) {
     return onSuccess(email);
   }
