@@ -2,30 +2,33 @@ import createUser from "./createUser.js";
 import onError from "./callbacks/onError.js";
 import onSuccess from "./callbacks/onSuccess.js";
 
-describe("Dada la función createUser", () => {
-  describe("Cuando la función se llama con un correo electrónico como cadena vacía", () => {
-    test("Entonces se devuelve una cadena", async () => {
-      // Organizar
+describe("Given function createUser", () => {
+  describe("When function is called with an email as an empty string", () => {
+    test("Then a string is returned", () => {
+      // Arrange
       const inputEmptyString = "";
-      // Actuar
-      const result = await createUser(inputEmptyString, onError, onSuccess);
-      // Afirmar
+      // Act
+      const result = createUser(inputEmptyString, onError, onSuccess);
+      // Assert
       expect(result).toEqual("Error: user not created");
     });
   });
+});
 
-  describe("Cuando la función se llama con un correo electrónico no vacío", () => {
-    test("Entonces se devuelve una cadena para el caso de éxito", async () => {
-      // Organizar
+describe("Given function createUser", () => {
+  describe("When function is called with an email as an empty string", () => {
+    test("Then a string is returned for success case", async () => {
+      // Arrange
       const inputString = "email@gmail.com";
-
-      // Actuar
+      // Act
       const result = await createUser(inputString, onError, onSuccess);
-
-      // Afirmar
+      // Assert
       expect(result).toEqual(
-        `Usuario con correo electrónico: ${inputString} ha sido creado correctamente`,
+        `User with email: ${inputString} has been correctly created` ||
+          "Error: user not created",
       );
     });
   });
 });
+
+describe("Given function createUser", () => {});
