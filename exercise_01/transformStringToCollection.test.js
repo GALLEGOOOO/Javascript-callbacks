@@ -7,7 +7,7 @@ describe("Given function transformStringToArray", () => {
   const mockOnError = jest.fn().mockImplementation(() => []);
   const mockOnSuccess = jest
     .fn()
-    .mockImplementation(() => ["Em", "dic", "Marc"]);
+    .mockImplementation(() => ["Em", "dic", "Arnau"]);
 
   test("When the value type of is a number then empty array should be returned", () => {
     //Arrange
