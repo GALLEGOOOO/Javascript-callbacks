@@ -1,5 +1,4 @@
-import onError from "./callbacks/onError.js";
-import onSuccess from "./callbacks/onSuccess.js";
+import validateString from "../helpers/validateString.js";
 /**
  * Define 'transformStringToArray' function and signature (JSDocs)
  *
@@ -15,17 +14,20 @@ import onSuccess from "./callbacks/onSuccess.js";
  *  - array
  */
 
+import validateString from "../helpers/validateString";
+
 /**
- * If received specified value is not a string or it is an empty string,
- *  then call onError callback otherwise, call onSuccess function
- * @param {any} value
+ * Returns onError or onSuccess function depending if value is a string and if it's not empty
+ * @param {*} value
  * @param {function} onError
  * @param {function} onSuccess
- * @returns {Array}
+ * @returns {function}
  */
-const transformStringToArray = (value, onError, onSuccess) => {
-  if (typeof value !== "string") return onError();
+function transformStringToArray(value, onError, onSuccess) {
+  if (!validateString(value)) {
+    return onError();
+  }
   return onSuccess(value);
-};
+}
 
 export default transformStringToArray;

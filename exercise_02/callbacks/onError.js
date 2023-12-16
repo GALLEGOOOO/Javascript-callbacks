@@ -7,12 +7,12 @@
  * output:
  *  - string: 'Error: user not created'
  */
+
 /**
- * This function returns a string when called!
- *
+ * When called this function returns an error string
  * @returns {string}
  */
-const onError = () => {
+function onError() {
   return "Error: user not created";
-};
+}
 export default onError;

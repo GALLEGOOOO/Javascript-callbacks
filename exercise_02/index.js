@@ -1,9 +1,13 @@
-import createUser from "./createUser.js";
 import onError from "./callbacks/onError.js";
 import onSuccess from "./callbacks/onSuccess.js";
+import createUser from "./createUser.js";
 
 //test with email as empty string and log result
-console.log(createUser("", onError, onSuccess));
+
+const resultEmpty = createUser("", onError, onSuccess);
+console.log(resultEmpty);
 
 //test with email as string and log result
-console.log(createUser("email@gmail.com", onError, onSuccess));
+
+const resultFull = createUser("test@gmail.com", onError, onSuccess);
+console.log(resultFull);

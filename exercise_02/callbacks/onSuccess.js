@@ -8,12 +8,13 @@
  * output:
  *  - string: User with email {email} has been correctly created
  */
+
 /**
- * Receives a string and returns an string with all the words contained in it
+ * It receives an email as string and returns a string
  * @param {string} email
  * @returns {string}
  */
-const onSuccess = (email) => {
-  return `User with email: ${email} has been correctly created`;
-};
+function onSuccess(email) {
+  return `User with email ${email} has been correctly created`;
+}
 export default onSuccess;
