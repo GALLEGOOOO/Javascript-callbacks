@@ -14,8 +14,6 @@ import validateString from "../helpers/validateString.js";
  *  - array
  */
 
-import validateString from "../helpers/validateString";
-
 /**
  * Returns onError or onSuccess function depending if value is a string and if it's not empty
  * @param {*} value
