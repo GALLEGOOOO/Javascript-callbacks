@@ -1,12 +1,12 @@
 /**
- * Validates if the given value is a string
- * @param {string} value
- * @returns {boolean}
+ * @param {any} value
+ * @returns boolean
  */
-function validateString(value) {
-  if (typeof value !== "string" || value === "" || value === undefined) {
-    return false;
+const validateString = function (value) {
+  if (typeof value === "string" && value.trim().length > 0) {
+    return true;
   }
-  return true;
-}
+  return false;
+};
+
 export default validateString;
